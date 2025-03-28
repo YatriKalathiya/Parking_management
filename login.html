@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="y_bg_image">
+        <div>
+            <h1 class="y_box_haeding text-center">Vehicle parking Management System</h1>
+            <div class="y_login-box">
+                <!-- Login Form -->
+                <div id="loginForm">
+                    <h2 class="y_loginHeading text-center">Login</h2>
+                    <p class="y_loginSubHeading text-center">Welcome !</p>
+                    <form>
+                        <label for="email">Email*</label>
+                        <input type="email" class="form-control">
+                        <label for="password">Password*</label>
+                        <input type="password" class="form-control mb-1">
+                        <a href="#" class="y_forgot-password" onclick="showForgotPassword()">Forgot Password?</a>
+                        <button type="submit" class="y_login-btn">Login</button>
+                    </form>
+                </div>
+
+                <!-- Forgot Password Form (Initially Hidden) -->
+                <div id="forgotPasswordForm" style="display: none;">
+                    <h2 class="y_loginHeading text-center">Forgot Password</h2>
+                    <p class="y_loginSubHeading text-center">Enter your mail to change your password.</p>
+                    <form>
+                        <label for="email">Email*</label>
+                        <input type="email" class="form-control">
+
+
+                        <button type="submit" class="y_login-btn" onclick="showOtpForm()">Submit</button>
+                    </form>
+                </div>
+
+                <!-- OTP Verification Form -->
+                <div id="otpForm" style="display: none;">
+                    <h2 class="y_loginHeading text-center">OTP Verification</h2>
+                    <p class="y_loginSubHeading text-center">OTP has been sent to abc@gmail.com</p>
+                    <form>
+                        <div class="y_otp-inputs">
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
+                                required>
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
+                                required>
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
+                                required>
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
+                                required>
+                        </div>
+                        <button type="submit" class="y_login-btn" onclick="showConfirmPassword()">Verify</button>
+
+                        <p class="y_verifyLine">Didn’t receive code?  <span>Resend</span></p>
+                    </form>
+                </div>
+
+
+                <!-- Confirm Password Form -->
+                <div id="ConfirmPassword" style="display: none;">
+                    <h2 class="y_loginHeading text-center">Change Password</h2>
+                    <p class="y_loginSubHeading text-center">Reset your password here!</p>
+                    <form>
+                        <label for="new-password">New Password*</label>
+                        <div class="y_password-field">
+                            <input type="password" id="new-password" class="form-control">
+                            <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+                        </div>
+                
+                        <label for="confirm-password">Confirm Password*</label>
+                        <div class="y_password-field">
+                            <input type="password" id="confirm-password" class="form-control">
+                            <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('confirm-password', this)">
+                        </div>
+                
+                        <button type="submit" class="y_login-btn">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- confirm password  -->
+    
+    <!-- Bootstrap JS file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

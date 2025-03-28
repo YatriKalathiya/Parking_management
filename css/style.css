@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+.row,
+.col {
+    margin: 0;
+    padding: 0;
+}
+
+.y_bg_image {
+    background: url('/img/LoginBack.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.y_login-box {
+    background: #ffffff;
+    padding: 58px 81px;
+    border-radius: 4px;
+    width: 633px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.y_forgot-password {
+    text-align: right;
+    display: block;
+    color: #D70000;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.y_login-btn {
+    width: 100%;
+    background: #000000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+/* .y_login-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    transition: all 1s;
+} */
+
+.y_loginHeading {
+    font-size: 32px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+}
+.y_loginSubHeading{
+    font-size: 18px;
+    font-weight: 600;
+    color: #6F6F6F;
+    margin-bottom: 26px;
+}
+.y_login-box form label{
+    text-align: start;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.y_login-box form input{
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #EEEEEE;
+    background-color: #F1F5F9;
+}
+.y_box_haeding{
+    color: #FFFFFF;
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 61px;
+}
+.y_password-field {
+    position: relative;
+    width: 100%;
+}
+
+.y_password-field input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.y_eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.y_eye-icon:hover {
+    opacity: 1;
+}
+.y_otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.otp-input {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    background-color: #F1F5F9;
+}
+.y_verifyLine{
+    text-align: center;
+    margin-top: 17px;
+    color: #929393;
+    font-size: 14px;
+    font-weight: 500;
+}
+.y_verifyLine span{
+    color: #000000;
+}
+@media (max-width: 1024px) {
+    .y_login-box {
+        width: 500px;
+        padding: 50px 60px;
+    }
+    .y_loginHeading {
+        font-size: 28px;
+    }
+    .y_loginSubHeading {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .y_login-box {
+        width: 80%;
+        padding: 40px;
+    }
+    .y_loginHeading {
+        font-size: 24px;
+    }
+    .y_loginSubHeading {
+        font-size: 14px;
+    }
+    .y_login-box form label {
+        font-size: 11px;
+    }
+    .y_login-box form input {
+        font-size: 14px;
+    }
+    .y_box_haeding {
+        margin-bottom: 31px;
+    }
+}
+
+@media (max-width: 576px) {
+    .y_bg_image {
+        height: auto;
+        padding: 50px 0;
+    }
+    .y_login-box {
+        width: 90%;
+        padding: 30px;
+    }
+    .y_loginHeading {
+        font-size: 22px;
+    }
+    .y_loginSubHeading {
+        font-size: 12px;
+    }
+    .y_login-box form label {
+        font-size: 10px;
+    }
+    .y_login-box form input {
+        font-size: 13px;
+    }
+    .y_forgot-password {
+        font-size: 10px;
+    }
+    .y_login-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .y_login-box {
+        width: 95%;
+        padding: 20px;
+    }
+    .y_loginHeading {
+        font-size: 20px;
+    }
+    .y_loginSubHeading {
+        font-size: 11px;
+    }
+    .y_login-box form label {
+        font-size: 9px;
+    }
+    .y_login-box form input {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .y_forgot-password {
+        font-size: 9px;
+    }
+    .y_login-btn {
+        font-size: 13px;
+        padding: 7px;
+    }
+}
