@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- Bootstrap CSS file -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- Font Awesome CSS file -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+            integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    
+    <!-- Header -->
+    <header class="y_header">
+        <div class="y_search_container y_search">
+            <span class="search-icon">
+                <img src="img/icon/search.png" alt="Search">
+            </span>
+            <input type="text" placeholder="Search vehicle no. " class="custom-search-input">
+        </div>
+        <div class="y_profile dropdown">
+            <span class="y_toggle" onclick="toggleSidebar()">☰</span>
+            <img src="img/icon/profile.png" alt="Profile" data-bs-toggle="dropdown">
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Change Password</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <!-- Sidebar -->
+    <div class="y_sidebar" id="y_sidebar">
+        <div class="y_logo">LOGO</div>
+        <a href="#" class="active"><img src="img/icon/home.png" alt="Dashboard"> Dashboard</a>
+        <a href="#"><img src="img/icon/rupee.png" alt="Users"> Revenue Data</a>
+        <a href="#"><img src="img/icon/p.png" alt="Parking Overview"> Parking Overview</a>
+        <a href="#"><img src="img/icon/report.png" alt="Report">Report</a>
+        <a href="#"><img src="img/icon/emp.png" alt="Employee">Employee</a>
+        <a href="#"><img src="img/icon/siftTime.png" alt="Shift Time">Shift Time</a>
+    </div>
+
+
+    <!-- Main Content -->
+    <main class="y_content">
+        <div class="container-fluid">
+            <h1>Dashboard</h1>
+            <p>Welcome to the admin panel.</p>
+        </div>
+    </main>
+    
+   <!-- Bootstrap JS file -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+   crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

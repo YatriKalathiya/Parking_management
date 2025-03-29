@@ -33,3 +33,12 @@ function moveToNext(input, event) {
         if (next) next.focus();
     }
 }
+
+// function toggleSidebar() {
+//     let sidebar = document.getElementById("y_sidebar");
+//     sidebar.classList.toggle("active");
+// }
+function toggleDrawer() {
+    const drawer = document.getElementById('y_drawer');
+    drawer.classList.toggle('open');
+  }

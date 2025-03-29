@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/yatri.css">
+  <style>
+    .y_name .dropdown-item {
+      padding: 0.25rem 0.5rem !important;
+      color: #000000;
+    }
+
+    .y_name .dropdown-item:hover,
+    .y_name .dropdown-item:active {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+      background-image: url(img/icon/menu.png) !important;
+    }
+
+    /* / drawer start / */
+
+    .y_drawer {
+      width: 282px;
+      background: #ffffff;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1030;
+    }
+
+    .y_drawer .y_logo h2 {
+      font-size: 24px;
+      font-weight: 600;
+      /* line-height: 64.8px; */
+      color: #000000;
+      text-align: center;
+      padding: 35px 0px;
+    }
+
+    .y_drawer .list-group a {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26.4px;
+      text-align: start;
+      padding: 25px 0;
+      padding-left: 61px;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .y_drawer .list-group-item {
+      border: none;
+    }
+
+    .y_drawer .list-group-item.y_activenav,
+    .y_drawer .list-group-item:hover {
+      background: #F1F5F9;
+      color: #000000;
+      cursor: pointer;
+      border-left: 4px solid #000000;
+      border-right: 4px solid #000000;
+    }
+
+    /* .y_drawer .list-group-item:hover img,
+        .y_drawer .list-group-item.y_activenav img
+         {
+          filter: brightness(0) saturate(100%) invert(56%) sepia(75%) saturate(1848%) hue-rotate(346deg) brightness(101%) contrast(97%);
+        } */
+    .y_name a:focus {
+      box-shadow: none;
+    }
+
+    .y_active a:active {
+      background: none;
+      color: black;
+    }
+
+    .y_navbar {
+      height: 100px;
+      background: #ffffff;
+      width: 100%;
+    }
+
+    .y_search input {
+      border: none;
+      width: 400px !important;
+      /* width: 100%; */
+      border-radius: 4px;
+      background: #F1F5F9;
+      outline: none;
+      padding: 10px 10px 10px 35px;
+      background-size: 20px;
+      box-shadow: 4px 4px 20px 0px #e5e5e500;
+    }
+
+    .y_search input::placeholder {
+      color: #6F6F6F !important;
+      font-size: 15px;
+    }
+
+    .y_search {
+      margin-left: 248px;
+    }
+
+    .y_profile>.fa-bell {
+      font-size: 30px;
+      margin-right: 26px;
+      color: #b6b1b1;
+    }
+
+    .y_profile>.fa-bell>span {
+      background: linear-gradient(180deg, #4b6c52 0%, #729578 100%);
+      top: -2px;
+      right: -6px;
+    }
+
+    .y_pro>img {
+      width: 36px;
+      border-style: none;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .y_pro>p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 30px;
+      text-align: left;
+      color: #06210b #fbbf77;
+      margin: 0;
+      padding-left: 10px;
+    }
+
+    /* / navbar end / */
+
+    #y_main-content {
+      margin-left: 282px;
+      margin-top: 100px;
+    }
+
+    .y_main {
+      padding: 0 !important;
+    }
+
+    /* / dd start / */
+    .y_profileImg {
+      width: 50px;
+      margin-left: 10px;
+      border: 1px solid #404040;
+      border-radius: 11px;
+    }
+
+    .y_name .dropdown-menu {
+      box-shadow: 10px 14px 18px 0px #00000014;
+      border: 0px;
+      border-radius: 0rem;
+      background-color: #ffffff;
+      padding: 9px;
+      border-radius: 4px;
+    }
+
+    /* .y_name .dropdown-toggle::after {
+            display: none !important;
+        } */
+
+    .y_name .btn:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+    }
+
+    .y_search_container {
+      cursor: pointer;
+      position: relative;
+      width: 100%;
+      /* max-width: 300px; */
+    }
+
+    .custom-search-input {
+      cursor: pointer;
+      width: 100%;
+      padding: 10px 15px 10px 40px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: transparent;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .custom-search-input::placeholder {
+      color: #ccc;
+    }
+
+    .y_navbar .navbar-toggler:focus {
+      box-shadow: none !important;
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #ccc;
+    }
+
+    .search-icon img {
+      width: 20px;
+    }
+
+    /* / dd end / */
+    .y_drpdwn button {
+      background-color: transparent !important;
+      border: none;
+      padding: 0;
+    }
+
+    .y_nav_sec h4 {
+      color: #fb7514;
+      font-size: 20px;
+    }
+
+    .y_name .dropdown-menu {
+      left: -131px;
+      top: 74px;
+    }
+
+
+    .y_btn_primary {
+      background-color: #fb7514;
+      color: white;
+      border: none;
+      padding: 9px 58px;
+      font-size: 18px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .y_btn_secodary {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      padding: 9px 58px;
+      font-size: 18px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .y_admin_main {
+      padding: 30px;
+      background-color: #040404;
+    }
+
+
+
+
+    /***************************************************
+        change password modal  css start  
+        ******************************************************/
+    .y_changePassModal .modal-dialog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* min-height: 100vh; Ensure it takes up the full height of the viewport */
+    }
+
+    .y_changePassModal .modal-header {
+      border-bottom: none !important;
+    }
+
+    .y_changePassModal .modal-footer {
+      border-top: none !important;
+    }
+
+    .y_changePassModal .modal-content {
+      background-color: #0F0F0F;
+    }
+
+    .y_changePassModal .modal-body {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .y_changePassModal .btn-close {
+      background-image: url(/y_img/close.png) !important;
+      opacity: 1 !important;
+    }
+
+    .y_changePassModal .modal-title {
+      font-size: 22px;
+      font-weight: 600;
+      max-width: 242px;
+      text-align: center;
+    }
+
+    @media (max-width: 1440px) {
+      .y_name .dropdown-menu {
+        top: 60px;
+      }
+
+      .y_navbar {
+        height: 70px;
+      }
+
+      .y_search input {
+        padding: 6px 10px 6px 35px;
+      }
+
+      .y_search input::placeholder {
+        font-size: 12px;
+      }
+
+      .y_drawer .y_logo h2 {
+        padding: 22px 0px;
+        text-align: center;
+      }
+
+      /* .y_drawer .list-group a {
+        padding: 20px;
+      } */
+      .y_drawer .list-group a {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .y_search input {
+        width: 270px !important;
+      }
+
+      .y_search {
+        margin-left: 204px;
+      }
+
+      .y_drawer {
+        width: 250px;
+      }
+
+      /* .y_drawer .y_logo h2 {
+                padding: 11px 9px 18px 45px;
+            } */
+
+      .y_drawer .list-group a {
+        border: none;
+        padding: 18px 0 18px 50px;
+        font-size: 19px;
+      }
+
+      #y_main-content {
+        margin-left: 250px;
+        margin-top: 100px;
+      }
+
+      .s_margin-left {
+        margin-left: -15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .y_logo{
+        display: none;
+      }
+      .y_changePassModal .modal-title {
+        font-size: 17px;
+      }
+
+      .y_navbar {
+        height: 70px;
+      }
+
+      .y_drawer {
+        position: fixed;
+        overflow-y: auto;
+        top: 70px;
+        left: -100%;
+        transition: left 0.4s ease-in-out;
+      }
+
+      .y_navbar .navbar-toggler {
+        display: block;
+      }
+
+      .y_search {
+        margin-left: 5px !important;
+      }
+
+      .y_search input {
+        width: 184px !important;
+      }
+
+      .y_drawer.open {
+        left: 0;
+      }
+
+      #y_main-content {
+        margin-left: 0;
+        width: 100%;
+        /* padding-left: 30px; */
+        margin-left: 0px !important;
+        margin-top: 70px;
+      }
+
+      .y_admin_main {
+        padding: 10px;
+      }
+
+      .y_btn_secodary {
+        padding: 9px 29px;
+        font-size: 12px;
+      }
+
+      .y_btn_primary {
+        padding: 9px 29px;
+        font-size: 12px;
+      }
+
+      .y_profileImg {
+        display: none;
+      }
+
+      /* .y_drpdwn .dropdown-menu {
+          left: -75% !important;
+        } */
+    }
+
+    @media (max-width: 576px) {
+      .y_changePassModal .modal-content {
+        margin: 0px;
+      }
+
+      .y_changePassModal .modal-body {
+        padding: 10px 20px;
+      }
+
+      .y_search input {
+        width: 149px !important;
+      }
+
+    }
+
+    @media (max-width: 425px) {
+
+      .y_search input {
+        width: 149px !important;
+      }
+
+      .y_nav_sec h4 {
+        font-size: 16px;
+      }
+
+      .y_drpdwn button {
+        font-size: 13px;
+      }
+
+      .y_profileImg {
+        width: 43px;
+      }
+
+      .y_navbar .navbar-toggler {
+        padding: 5px 8px;
+        font-size: 15px;
+      }
+
+      .y_profile>.fa-bell {
+        font-size: 20px !important;
+        margin-right: 26px;
+        color: #b6b1b1;
+      }
+
+      .y_profile>.fa-bell>span {
+        background: linear-gradient(180deg, #4b6c52 0%, #729578 100%);
+        top: 0px;
+        right: -3px;
+        padding: 5px !important;
+      }
+
+      /* .y_search {
+            display: none;
+          } */
+    }
+
+    @media (max-width: 375px) {
+      .y_search input {
+        width: 100px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-light shadow fixed-top y_navbar">
+    <div class="d-flex align-items-center">
+      <button class="navbar-toggler" type="button" onclick="toggleDrawer()" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="y_search_container y_search">
+        <span class="search-icon">
+          <img src="img/icon/search.png" alt="Search">
+        </span>
+        <input type="text" placeholder="Search vehicle no. " class="custom-search-input">
+      </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="y_profile d-flex align-items-center justify-content-end float-end me-3">
+        <div class="y_pro d-flex align-items-center align-content-center">
+          <div class="y_name">
+            <div class="d-flex align-items-center">
+              <div class="y_nav_sec">
+                <h4 class="mb-0" id="userName"></h4>
+                <div class="dropdown y_drpdwn">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/icon/profile.png" alt="">
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/y_edit_profile.html">
+                        <div class="d-flex align-items-center">
+                          <img class="fs-2" src="img/icon/profileDrop.png" alt="">
+                          <p class="mb-0 ps-2 fs-6">Edit Profile</p>
+                        </div>
+                      </a></li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                        <div class="d-flex">
+                          <img class="fs-2" src="img/icon/chnagePass.png" alt="">
+                          <p class="mb-0 ps-2 fs-6">Change Password</p>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <div class="d-flex">
+                          <img class="fs-2" src="img/icon/logout.png" alt="">
+                          <p class="mb-0 ps-2 fs-6">Logout</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- <img class="y_profileImg" src="" alt=""> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="modal y_changePassModal fade" id="changePasswordModal" tabindex="-1"
+    aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <div class="y_modal_title d-flex justify-content-center">
+            <h5 class="modal-title text-center text-light pb-3" id="changePasswordModalLabel">Change
+              Password</h5>
+          </div>
+          <div class="toggle-container">
+            <input type="password" id="old-password" class="form-control my-3 pswd" placeholder="Enter Old Password"
+              required>
+            <i class="toggle-password2 fa fa-eye fa-eye-slash" data-target="#old-password"></i>
+          </div>
+          <div class="toggle-container">
+            <input type="password" id="new-password" class="form-control my-3 pswd" placeholder="Create New Password"
+              required>
+            <i class="toggle-password2 fa fa-eye fa-eye-slash" data-target="#new-password"></i>
+          </div>
+          <div class="toggle-container">
+            <input type="password" id="confirm-password" class="form-control my-3 pswd"
+              placeholder="Confirm New Password" required>
+            <i class="toggle-password2 fa fa-eye fa-eye-slash" data-target="#confirm-password"></i>
+          </div>
+        </div>
+        <div class="modal-footer p-0 d-flex justify-content-center">
+          <button type="button" class="y_btn_primary">Change Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal y_changePassModal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content py-4">
+        <div class="modal-header py-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <div class="y_modal_title d-flex justify-content-center">
+            <h5 class="modal-title text-center text-light pb-3" id="changePasswordModalLabel">Are you sure
+              you want to Logout ?</h5>
+          </div>
+        </div>
+        <div class="modal-footer p-0 d-flex justify-content-center">
+          <button type="button" class="y_btn_secodary" id="cancelLogout">No</button>
+          <button type="button" class="y_btn_primary" id="user-logout" onclick="logout()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="y_drawer" id="y_drawer">
+    <div class="list-group list-group-flush">
+      <div class="y_logo">
+        <h2>LOGO</h2>
+      </div>
+      <a href="#" class="list-group-item y_activenav list-group-item-action d-flex align-items-cente">
+        <img src="img/icon/home.png" class="me-3" style="vertical-align: top;">
+        Dashboard
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <img src="img/icon/rupee.png" class="me-3" style="vertical-align: top;">
+        Revenue Data
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <img src="img/icon/p.png" class="me-3" style="vertical-align: top;">
+        Parking Overview
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <img src="img/icon/report.png" class="me-3" style="vertical-align: top;">
+        Report
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <img src="img/icon/emp.png" class="me-3" style="vertical-align: top;">
+        Employee
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <img src="img/icon/siftTime.png" class="me-3" style="vertical-align: top;">
+        Shift Time
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+
+</body>
+<script>
+
+</script>
+
+</html>
