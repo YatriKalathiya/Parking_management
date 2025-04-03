@@ -249,3 +249,23 @@ const ctx = document.getElementById('revenueChart').getContext('2d');
             revenueChart.data.datasets[0].data = newData[period];
             revenueChart.update();
         }
+
+
+// file upload input 
+document.getElementById('fileInput').addEventListener('change', function () {
+    let fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+    document.querySelector('.y_file_name').textContent = fileName;
+});
+document.querySelectorAll(".toggle-password2").forEach((eyeIcon) => {
+    eyeIcon.addEventListener("click", function () {
+      let passwordField = document.querySelector(this.getAttribute("data-target"));
+      
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        this.src = "img/icon/eye-close.png"; // Change to closed eye icon
+      } else {
+        passwordField.type = "password";
+        this.src = "img/icon/eye.png"; // Change to open eye icon
+      }
+    });
+  });

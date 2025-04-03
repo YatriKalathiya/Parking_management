@@ -79,6 +79,20 @@
     border: 1px solid #EEEEEE;
     background-color: #F1F5F9;
 }
+.y_changePass-box form label {
+    text-align: start;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.y_changePass-box form input {
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #EEEEEE;
+    background-color: #F1F5F9;
+}
 
 .y_box_haeding {
     color: #FFFFFF;
@@ -255,6 +269,13 @@
     text-align: center;
     height: 308px !important;
 }
+.y_containerMain {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
 .y_container1 {
     background: #ffffff;
     padding: 37px;
@@ -263,6 +284,7 @@
     height: 308px !important;
 
 }
+
 .y_container2 {
     background: #ffffff;
     padding: 37px;
@@ -298,15 +320,18 @@
     border-radius: 8px;
     text-align: center;
 }
-.y_card p{
+
+.y_card p {
     font-size: 18px;
     font-weight: 500;
     color: #000;
     margin-bottom: 18px;
 }
-.y_icon{
-    margin-bottom: 22px;   
+
+.y_icon {
+    margin-bottom: 22px;
 }
+
 .y_icon img {
     width: 40px;
     height: 40px;
@@ -316,6 +341,7 @@
     font-size: 38px;
     font-weight: 600;
 }
+
 .y_cardLine {
     position: relative;
 }
@@ -327,8 +353,10 @@
     right: 0;
     height: 80%;
     width: 3px;
-    background-color: #F1F5F9; /* Line color */
+    background-color: #F1F5F9;
+    /* Line color */
 }
+
 .y_chart-container {
     display: flex;
     justify-content: center;
@@ -500,7 +528,7 @@
 
 #y_main-content {
     background-color: #F1F5F9;
-    /* height: 100vh; */
+    height: 100vh;
     margin-left: 282px;
     margin-top: 100px;
 }
@@ -592,23 +620,27 @@
 
 
 .y_btn_primary {
-    background-color: #fb7514;
-    color: white;
+    background-color: #000000;
+    color: #ffffff;
     border: none;
-    padding: 9px 58px;
-    font-size: 18px;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-top: 81px;
+    margin-bottom: 100px;
 }
 
 .y_btn_secodary {
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 9px 58px;
-    font-size: 18px;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    background-color: #F1F5F9;
+    color: #000000;
+    border: none;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
 }
 
 .y_admin_main {
@@ -638,7 +670,8 @@
 }
 
 .y_changePassModal .modal-content {
-    background-color: #0F0F0F;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .y_changePassModal .modal-body {
@@ -647,11 +680,12 @@
 }
 
 .y_changePassModal .btn-close {
-    background-image: url(/y_img/close.png) !important;
+    background-image: url(/img/icon/close.png) !important;
     opacity: 1 !important;
 }
 
 .y_changePassModal .modal-title {
+    color: #000;
     font-size: 22px;
     font-weight: 600;
     max-width: 242px;
@@ -672,28 +706,31 @@
 
 /* sidebar end  */
 
-.button_container{
+.button_container {
     padding: 9px 6px;
     background-color: #000000;
     border-radius: 8px;
     width: fit-content;
 }
-.button_container a{
+
+.button_container a {
     text-decoration: none;
     padding: 6px 23px;
     border-radius: 6px;
     background-color: transparent;
     color: white;
 }
-.button_container a.active{
+
+.button_container a.active {
     background-color: #F1F5F9;
     color: #000000;
 }
+
 /* donut chart  */
 .donut_chart_container {
-   display: grid;
-   justify-content: center;
-   gap: 33px;
+    display: grid;
+    justify-content: center;
+    gap: 33px;
 }
 
 .donut_chart {
@@ -724,150 +761,253 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
 .y_revenu_chart-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
 }
+
 .y_chart_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .y_chart_header h2 {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
 }
-.y_today p{
+
+.y_today p {
     font-size: 14px;
     margin-bottom: 4px;
     font-weight: 600;
     color: #000000;
 }
-.y_today span{
+
+.y_today span {
     font-size: 12px;
     font-weight: 600;
     color: #000000;
 }
-.y_yesterday span{
+
+.y_yesterday span {
     font-size: 12px;
     font-weight: 600;
     color: #6F6F6F;
 
 }
-.y_yesterday p{
+
+.y_yesterday p {
     font-size: 14px;
     margin-bottom: 4px;
     font-weight: 600;
     color: #6F6F6F;
 }
+
 #revenueChart {
     width: 100% !important;
-    max-height: 218px; /* Adjust as per need */
+    max-height: 218px;
+    /* Adjust as per need */
 }
-.y_card1Header{
+
+.y_card1Header {
     font-size: 20px;
     font-weight: 600;
     color: #000000;
     margin-bottom: 28px;
 }
-.y_card2Header{
+
+.y_card2Header {
     font-size: 20px;
     font-weight: 600;
     color: #000000;
     margin-bottom: 13px;
 }
-.y_muted{
+
+.y_muted {
     font-size: 20px;
     font-weight: 600;
     margin-top: 26px;
     color: #6F6F6F;
 }
-.y_blue{
+
+.y_blue {
     font-size: 20px;
     font-weight: 600;
     color: #01457C;
 }
-.y_mutedSmall{
+
+.y_mutedSmall {
     font-size: 16px !important;
     font-weight: 600;
     color: #6F6F6F !important;
     margin-top: 28px !important;
 }
+
+
+/* edit profile css start  */
+.y_mainTitle{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    padding-top: 32px;
+    color: #000000;
+}
+.y_edit_profileForm input{
+    padding: 15px 20px;
+    width: 100%;
+    background-color: #F1F5F9;
+    border: 1px solid #EEEEEE;
+    border-radius: 6px;
+}
+.y_edit_profileForm input{
+    outline: none !important;
+}
+.y_edit_profileForm input[type="file"] {
+    display: none;
+}
+
+.y_file_upload {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #F1F5F9;
+    border: 1px solid #EEEEEE;
+    border-radius: 6px;
+    padding: 15px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.y_file_name {
+    flex: 1;
+    color: #333;
+}
+
+.y_choose_btn {
+    margin-left: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.y_choose_btn:hover {
+    background-color: #f0f0f0;
+}
+
+
+  .toggle-password2 {
+    color: #999999;
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: -42px;
+  }
 @media (max-width: 1440px) {
+    #y_main-content {
+        margin-top: 68px;
+    }
     .y_card p {
         font-size: 13px;
         margin-bottom: 4px;
     }
+
     .y_number {
         font-size: 27px;
     }
+
     #y_legend {
         gap: 5px;
     }
-    .barchart_h5{
+
+    .barchart_h5 {
         font-size: 18px !important;
     }
+
     .y_chart_header h2 {
         font-size: 18px;
     }
+
     .y_card1Header {
         margin-bottom: 14px;
     }
+
     .y_muted {
         margin-top: 1px;
         font-size: 16px;
     }
+
     .y_blue {
         font-size: 14px;
     }
-    .y_container ,.y_container1  {
+
+    .y_container,
+    .y_container1 {
         height: 229px !important;
     }
+
     .donut_chart {
         width: 150px;
         height: 150px;
     }
+
     .y_container2 {
         height: 263px !important;
     }
+
     .donut_chart_container {
         gap: 9px;
     }
+
     .donut_chart_value {
         font-size: 13px;
     }
+
     .donut_chart_total {
         font-size: 13px;
     }
+
     .button_container a {
         font-size: 13px;
         padding: 6px 17px;
     }
+
     .button_container {
         padding: 6px 3px 8px 3px;
     }
+
     .y_mutedSmall {
         margin-top: 9px !important;
     }
+
     #revenueChart {
         max-height: 150px;
     }
+
     .sub_div {
         width: 18px;
         height: 134px;
     }
+
     .y_chart-container {
         gap: 17px;
         padding: 17px;
     }
-    .y_container1{
+
+    .y_container1 {
         padding: 20px;
     }
+
     .y_card {
         padding: 12px;
     }
+
     .y_name .dropdown-menu {
         top: 60px;
     }
@@ -894,6 +1034,28 @@
     } */
     .y_drawer .list-group a {
         font-size: 17px;
+    }
+
+    /* edit profile  */
+    .y_mainTitle {
+        font-size: 22px;
+        margin-bottom: 22px;
+        padding-top: 22px;
+    }
+    .y_edit_profileForm input {
+        padding: 10px 14px;
+    }
+    .y_btn_primary , .y_btn_secodary {
+        padding: 7px 32px;
+        font-size: 15px;
+        margin-top: 40px;
+        margin-bottom: 24px;
+    }
+    .y_file_upload {
+        padding: 7px 14px;
+    }
+    .y_choose_btn {
+        font-size: 11px;
     }
 }
 
@@ -922,12 +1084,12 @@
 
     #y_main-content {
         margin-left: 250px;
-        margin-top: 100px;
+        margin-top: 68px;
     }
 
     .s_margin-left {
         margin-left: -15px;
-    }
+    }   
 
     .y_login-box {
         width: 500px;
@@ -948,49 +1110,65 @@
         font-size: 12px;
         margin-bottom: 2px;
     }
+
     .y_number {
         font-size: 24px;
     }
+
     .button_container a {
         font-size: 12px;
         padding: 5px 12px;
     }
+
     .button_container {
         padding: 5px 2px 6px 2px;
     }
-    .y_container, .y_container1, .y_container2 {
+
+    .y_container,
+    .y_container1,
+    .y_container2 {
         height: auto !important;
         padding: 15px;
     }
+
     .y_card {
         padding: 10px;
     }
+
     .donut_chart {
         width: 120px;
         height: 120px;
     }
+
     .y_chart-container {
         gap: 10px;
         padding: 10px;
     }
+
     .y_chart_header h2 {
         font-size: 16px;
     }
+
     .y_muted {
         font-size: 14px;
     }
+
     .y_blue {
         font-size: 12px;
     }
+
     .y_cardLine {
         flex: 1 1 100%;
     }
+
     .y_revenu_chart-container {
         padding: 15px;
     }
+
     .y_container img {
         max-width: 50px;
     }
+
     .y_logoRes {
         display: block;
         padding: 0px 10px;
@@ -1050,7 +1228,7 @@
         font-size: 12px;
     }
 
-    .y_btn_primary {
+    .y_btn_primary  , .y_btn_secodary{
         padding: 9px 29px;
         font-size: 12px;
     }
@@ -1109,19 +1287,24 @@
     .y_number {
         font-size: 22px;
     }
+
     .button_container a {
         font-size: 11px;
         padding: 4px 10px;
     }
+
     .y_card p {
         font-size: 11px;
     }
+
     .y_chart_header h2 {
         font-size: 14px;
     }
+
     .y_container img {
         max-width: 40px;
     }
+
     .y_changePassModal .modal-content {
         margin: 0px;
     }
@@ -1172,7 +1355,8 @@
     .y_search input {
         width: 149px !important;
     }
-    .y_chartBox{
+
+    .y_chartBox {
         display: block !important;
     }
 }
@@ -1181,19 +1365,24 @@
     .y_number {
         font-size: 20px;
     }
+
     .button_container a {
         font-size: 10px;
         padding: 3px 8px;
     }
+
     .y_card p {
         font-size: 10px;
     }
+
     .y_chart_header h2 {
         font-size: 13px;
     }
+
     .y_container img {
         max-width: 35px;
     }
+
     .y_search input {
         width: 149px !important;
     }
@@ -1240,6 +1429,7 @@
     .button_container {
         padding: 0px 2px 5px 6px;
     }
+
     .y_login-box {
         width: 95%;
         padding: 20px;
@@ -1261,6 +1451,14 @@
         font-size: 12px;
         padding: 8px;
     }
+    .y_changePass-box form label {
+        font-size: 9px;
+    }
+
+    .y_changePass-box form input {
+        font-size: 12px;
+        padding: 8px;
+    }
 
     .y_forgot-password {
         font-size: 9px;
@@ -1277,20 +1475,25 @@
         width: 100px !important;
     }
 }
+
 @media (max-width: 320px) {
     .y_number {
         font-size: 18px;
     }
+
     .button_container a {
         font-size: 9px;
         padding: 2px 6px;
     }
+
     .y_card p {
         font-size: 9px;
     }
+
     .y_chart_header h2 {
         font-size: 12px;
     }
+
     .y_container img {
         max-width: 30px;
     }
