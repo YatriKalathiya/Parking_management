@@ -1066,7 +1066,192 @@
 .y_hr {
     border-bottom: 3px solid #F1F5F9;
 }
+.entryLeft{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 23px;
+    color: #159300;
+    margin-right: auto;
+}
+.entryRight{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 23px;
+    color: #159300;
+    margin-left: auto;
+}
+.ExitLeft{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 23px;
+    color: #FF0000;
+    margin-right: auto;
+}
+.ExitRight{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 23px;
+    color: #FF0000;
+    margin-left: auto;
+}
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0px 20px;
+    padding: 20px;
+}
 
+.grid-column {
+    flex: 1;
+    min-width: 220px;
+    border-right: 2px dashed #ccc;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Improved dashed border with longer dashes */
+.grid-column {
+    border-right: none;
+    background-image: linear-gradient(to bottom, #000 40%, transparent 70%);
+    background-position: right;
+    background-size: 2px 15px;
+    background-repeat: repeat-y;
+}
+
+.grid-column:last-child {
+    border-right: none;
+    background-image: none;
+}
+
+.grid-cell {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.highlighted {
+    background-color: #212529;
+    color: white;
+}
+
+.row-pair {
+    display: flex;
+    gap: 45px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.row-pair > div {
+    flex: 1;
+}
+
+/* Grid columns container - to ensure a clean layout */
+.grid-rows {
+    position: relative;
+}
+
+/* Add continuous vertical line between A and B columns */
+.column-divider {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #F1F5F9;
+    transform: translateX(-50%);
+}
+.y_table-container {
+    width: 100%;
+    overflow-x: auto;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+}
+
+.y_table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    min-width: 650px; /* Ensures table will trigger horizontal scroll on smaller screens */
+}
+
+.y_thead {
+    background-color: #F1F5F9;
+}
+
+.y_th, .y_td {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.y_th {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.y_tr:hover {
+    background-color: #F1F5F9;
+}
+
+.y_pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.y_pagination-button, .y_page-number {
+    padding: 5px 12px;
+    margin: 0 3px;
+    color: #000000;
+    border: none !important;
+}
+
+.y_active {
+    background-color: transparent;
+    color: #6F6F6F;
+    border: 1px solid #6F6F6F !important;
+    border-radius: 6px;
+    border-color: #1976d2;
+}
+
+.y_pagination-button:hover:not(:disabled), .y_page-number:hover:not(.y_active) {
+    background-color: transparent;
+    border: none;
+}
+
+.y_pagination-button:disabled {
+    cursor: not-allowed;
+    color: #cccccc;
+}
+
+.y_datepicker_wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .y_date_input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .y_date_icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
 @media (max-width: 1440px) {
     .y_box_ride{
         gap: 10px !important;
@@ -1326,9 +1511,42 @@
         font-size: 11px;
     }
 }
-
+@media (max-width: 992px) {
+    .y_th {
+        font-size: 13px;
+    }
+    .y_th, .y_td{
+        font-size: 12px;
+    }
+    .grid-container {
+        justify-content: space-around;
+    }
+    
+    .grid-column {
+        flex-basis: 45%;
+    }
+}
 @media (max-width: 768px) {
-
+    .grid-column {
+        flex-basis: 100%;
+        border-right: none;
+        background-image: none;
+        padding-right: 0;
+        border-bottom: 2px dashed #ccc;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        background-image: linear-gradient(to right, #ccc 70%, transparent 30%);
+        background-position: bottom;
+        background-size: 15px 2px;
+        background-repeat: repeat-x;
+    }
+    
+    .grid-column:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        background-image: none;
+    }
     .row,
     .col,
     .row>* {

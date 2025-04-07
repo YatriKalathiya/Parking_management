@@ -269,3 +269,6 @@ document.querySelectorAll(".toggle-password2").forEach((eyeIcon) => {
       }
     });
   });
+
+
+//   date icon select 
