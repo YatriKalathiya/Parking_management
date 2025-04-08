@@ -169,14 +169,21 @@
     </div>
     <main class="d_order_main p-4 pt-0" id="y_main-content">
         <section>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex res_flex justify-content-between">
                 <h1 class="y_mainTitle">Report</h1>
                 <div>
-                    <div class="d-flex">
-                        <div class="y_datepicker_wrapper">
-                            <input type="date" id="y_date_input" class="y_date_input" />
-                            <img src="img/icon/profileDrop.png" alt="Calendar" class="y_date_icon" onclick="openDatePicker()" />
-                          </div>
+                    <div class="d-flex btn_container">
+                        <div class="date-container">
+                            <div class="date-label">Today</div>
+                            <div class="date-input-wrapper">
+                                <img src="img/icon/date.png" alt="Calendar" class="date-icon">
+                                <input type="date">
+                            </div>
+                        </div>
+                        <div class="download_btn">
+                            <h1>Download</h1> 
+                            <img src="img/icon/download.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>

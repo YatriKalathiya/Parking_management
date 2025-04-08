@@ -1252,6 +1252,126 @@
     height: 24px;
     cursor: pointer;
   }
+  .date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 32px;
+    background-color: #ffffff;
+    gap: 15px;
+}
+
+.date-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: auto;
+}
+
+.date-icon {
+    width: 20px;
+    height: 20px;
+}
+.btn_container{
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
+/* Hide the default date input appearance */
+.date-input-wrapper input[type="date"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.date-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.download_btn{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 9px 17px;
+    background-color: #ffffff;
+}
+.download_btn img{
+    width: 20px;
+    height: 20px;
+}
+.download_btn h1{
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/* employee table  */
+.employee-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+/* Status indicator styling */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.on-duty {
+    color: #2e7d32;
+}
+.on-duty .status-dot {
+    background-color: #2e7d32;
+}
+.off-duty {
+    color: #d32f2f;
+}
+.off-duty .status-dot {
+    background-color: #d32f2f;
+}
+
+/* Action buttons styling */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.edit-btn, .delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+.edit-btn {
+    color: #1976d2;
+}
+.edit-btn:hover {
+    background-color: rgba(25, 118, 210, 0.1);
+}
+.delete-btn {
+    color: #d32f2f;
+}
+.delete-btn:hover {
+    background-color: rgba(211, 47, 47, 0.1);
+}
+
 @media (max-width: 1440px) {
     .y_box_ride{
         gap: 10px !important;
@@ -1401,6 +1521,10 @@
     /* edit profile  */
     .y_mainTitle {
         font-size: 22px;
+        margin-bottom: 22px;
+        margin-top: 22px;
+    }
+    .btn_container {
         margin-bottom: 22px;
         padding-top: 22px;
     }
@@ -1735,6 +1859,30 @@
 }
 
 @media (max-width: 576px) {
+    .res_flex{
+        display: block !important;
+    }
+    .btn_container{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .date-container {
+        padding: 3px 12px;
+        gap: 6px;
+    }
+    .download_btn {
+        margin-left: 14px;
+        gap: 11px;
+        padding: 4px 9px;
+    }
+    .date-icon {
+        width: 17px;
+        height: 17px;
+    }
+    .download_btn img {
+        width: 17px;
+        height: 17px;
+    }
     .y_number {
         font-size: 22px;
     }
