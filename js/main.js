@@ -271,4 +271,66 @@ document.querySelectorAll(".toggle-password2").forEach((eyeIcon) => {
   });
 
 
-//   date icon select 
+// sorting employee table 
+function sortTable(sortBy) {
+    const table = document.getElementById('employeeTable');
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+    rows.sort((a, b) => {
+        let valueA, valueB;
+        
+        if (sortBy === 'name') {
+            valueA = a.cells[1].textContent.trim().toLowerCase();
+            valueB = b.cells[1].textContent.trim().toLowerCase();
+            return valueA.localeCompare(valueB);
+        } 
+        else if (sortBy === 'status') {
+            valueA = a.cells[6].querySelector('.status-indicator').textContent.trim();
+            valueB = b.cells[6].querySelector('.status-indicator').textContent.trim();
+            // Sort "On Duty" first, then "Off Duty"
+            return valueA === valueB ? 0 : valueA === "On Duty" ? -1 : 1;
+        } 
+        else if (sortBy === 'shift') {
+            valueA = a.cells[5].textContent.trim();
+            valueB = b.cells[5].textContent.trim();
+            return valueA.localeCompare(valueB);
+        }
+    });
+    
+    // Clear the table and append sorted rows
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+    
+    rows.forEach(row => {
+        tbody.appendChild(row);
+    });
+}
+
+
+// time querySelector
+function toggleTimeDropdown() {
+    document.getElementById('K_timePopup').style.display = 'block';
+  }
+
+  function closeTimeDropdown() {
+    document.getElementById('K_timePopup').style.display = 'none';
+  }
+
+  function setTime() {
+    const hour = document.getElementById('K_hour').value;
+    const minute = document.getElementById('K_minute').value;
+    const ampm = document.getElementById('K_ampm').value;
+    const time = `${hour}:${minute} ${ampm}`;
+    document.querySelector('.K_time-display').textContent = time;
+    closeTimeDropdown();
+  }
+
+  // Close if clicked outside
+  document.addEventListener('click', function(e) {
+    const container = document.querySelector('.K_time-dropdown');
+    if (!container.contains(e.target)) {
+      closeTimeDropdown();
+    }
+  });

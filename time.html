@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Picker</title>
+  <style>
+   .db_time_picker_wrapper {
+  position: relative;
+  width: 100%;
+  margin: 20px;
+}
+
+.db_time_display {
+  background: #f5f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.db_time_picker {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  gap: 20px;
+  z-index: 999;
+}
+
+.db_time_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.db_time_option {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.db_time_option.selected {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.db_time_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.db_time_buttons button {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+
+    <div class="db_time_picker_wrapper">
+        <div class="db_time_display" onclick="db_toggleTimePicker()">Start Time</div>
+        <div class="db_time_picker" id="db_time_picker">
+          <div class="db_time_column">
+            <div class="db_time_option" onclick="db_setHour(2)">2</div>
+            <div class="db_time_option selected" onclick="db_setHour(3)">3</div>
+            <div class="db_time_option" onclick="db_setHour(4)">4</div>
+          </div>
+          <div class="db_time_column">
+            <div class="db_time_option" onclick="db_setMinute(30)">30</div>
+            <div class="db_time_option selected" onclick="db_setMinute(31)">31</div>
+            <div class="db_time_option" onclick="db_setMinute(32)">32</div>
+          </div>
+          <div class="db_time_column">
+            <div class="db_time_option" onclick="db_setPeriod('AM')">AM</div>
+            <div class="db_time_option selected" onclick="db_setPeriod('PM')">PM</div>
+          </div>
+          <div class="db_time_buttons">
+            <button onclick="db_cancelTime()">Cancel</button>
+            <button onclick="db_confirmTime()">Ok</button>
+          </div>
+        </div>
+      </div>
+      
+
+<script>
+let db_selectedHour = 3;
+let db_selectedMinute = 31;
+let db_selectedPeriod = "PM";
+
+function db_toggleTimePicker() {
+  const picker = document.getElementById("db_time_picker");
+  picker.style.display = picker.style.display === "block" ? "none" : "block";
+}
+
+function db_setHour(hour) {
+  db_selectedHour = hour;
+  db_updateSelection("hour", hour);
+}
+
+function db_setMinute(minute) {
+  db_selectedMinute = minute;
+  db_updateSelection("minute", minute);
+}
+
+function db_setPeriod(period) {
+  db_selectedPeriod = period;
+  db_updateSelection("period", period);
+}
+
+function db_updateSelection(type, value) {
+  let column;
+  if (type === "hour") column = document.querySelectorAll(".db_time_column")[0];
+  if (type === "minute") column = document.querySelectorAll(".db_time_column")[1];
+  if (type === "period") column = document.querySelectorAll(".db_time_column")[2];
+
+  column.querySelectorAll(".db_time_option").forEach(opt => {
+    opt.classList.remove("selected");
+    if (opt.textContent == value) opt.classList.add("selected");
+  });
+}
+
+function db_cancelTime() {
+  document.getElementById("db_time_picker").style.display = "none";
+}
+
+function db_confirmTime() {
+  const display = document.querySelector(".db_time_display");
+  display.textContent = `Start Time: ${db_selectedHour}:${db_selectedMinute} ${db_selectedPeriod}`;
+  document.getElementById("db_time_picker").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

@@ -173,20 +173,30 @@
                 <h1 class="y_mainTitle">Employee</h1>
                 <div>
                     <div class="d-flex btn_container">
-                        <div class="download_btn">
-                            <h1>Sort By</h1> 
-                            <img src="img/icon/filter.png" alt="">
+                        <div class="dropdown">
+                            <button class="download_btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h1>Sort By</h1>
+                                <img src="img/icon/filter.png" alt="">
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#" onclick="sortTable('name')">A to Z</a>
+                                <a class="dropdown-item" href="#" onclick="sortTable('status')">Status</a>
+                                <a class="dropdown-item" href="#" onclick="sortTable('shift')">Shift</a>
+                            </div>
                         </div>
-                        <div class="download_btn">
-                            <img src="img/icon/plus.png" alt="">
-                            <h1>Add New</h1> 
-                        </div>
+                        <a href="#" class="text-decoration-none">
+                            <div class="download_btn">
+                                <img src="img/icon/plus.png" alt="">
+                                <h1>Add New</h1>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="y_containerMain">
                 <div class="y_table-container">
-                    <table class="y_table">
+                    <table class="y_table" id="employeeTable">
                         <thead class="y_thead">
                             <tr class="y_tr">
                                 <th class="y_th">Image</th>
@@ -201,11 +211,11 @@
                         </thead>
                         <tbody>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Amit Kumar</td>
+                                <td class="y_td">amit.kumar@gmail.com</td>
+                                <td class="y_td">9587 3654 1254</td>
+                                <td class="y_td">+91 9876543210</td>
                                 <td class="y_td">Shift 01</td>
                                 <td class="y_td">
                                     <div class="status-indicator on-duty">
@@ -216,56 +226,17 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
-                                <td class="y_td">Shift 01</td>
-                                <td class="y_td">
-                                    <div class="status-indicator on-duty">
-                                        <span class="status-dot"></span>
-                                        On Duty
-                                    </div>
-                                </td>
-                                <td class="y_td">
-                                    <div class="action-buttons">
-                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
-                                <td class="y_td">Shift 01</td>
-                                <td class="y_td">
-                                    <div class="status-indicator on-duty">
-                                        <span class="status-dot"></span>
-                                        On Duty
-                                    </div>
-                                </td>
-                                <td class="y_td">
-                                    <div class="action-buttons">
-                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Priya Patel</td>
+                                <td class="y_td">priya.patel@outlook.com</td>
+                                <td class="y_td">8456 2178 3654</td>
+                                <td class="y_td">+91 8765432109</td>
                                 <td class="y_td">Shift 02</td>
                                 <td class="y_td">
                                     <div class="status-indicator off-duty">
@@ -276,16 +247,17 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Rahul Sharma</td>
+                                <td class="y_td">rahul.sharma@yahoo.com</td>
+                                <td class="y_td">6325 9874 1025</td>
+                                <td class="y_td">+91 9632587410</td>
                                 <td class="y_td">Shift 01</td>
                                 <td class="y_td">
                                     <div class="status-indicator on-duty">
@@ -296,56 +268,17 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
-                                <td class="y_td">Shift 01</td>
-                                <td class="y_td">
-                                    <div class="status-indicator on-duty">
-                                        <span class="status-dot"></span>
-                                        On Duty
-                                    </div>
-                                </td>
-                                <td class="y_td">
-                                    <div class="action-buttons">
-                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
-                                <td class="y_td">Shift 01</td>
-                                <td class="y_td">
-                                    <div class="status-indicator on-duty">
-                                        <span class="status-dot"></span>
-                                        On Duty
-                                    </div>
-                                </td>
-                                <td class="y_td">
-                                    <div class="action-buttons">
-                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Neha Gupta</td>
+                                <td class="y_td">neha.gupta@gmail.com</td>
+                                <td class="y_td">7412 5896 3214</td>
+                                <td class="y_td">+91 7854123690</td>
                                 <td class="y_td">Shift 03</td>
                                 <td class="y_td">
                                     <div class="status-indicator off-duty">
@@ -356,16 +289,38 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Vikram Singh</td>
+                                <td class="y_td">vikram.singh@hotmail.com</td>
+                                <td class="y_td">5214 9687 3025</td>
+                                <td class="y_td">+91 8523697410</td>
+                                <td class="y_td">Shift 02</td>
+                                <td class="y_td">
+                                    <div class="status-indicator on-duty">
+                                        <span class="status-dot"></span>
+                                        On Duty
+                                    </div>
+                                </td>
+                                <td class="y_td">
+                                    <div class="action-buttons">
+                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="y_tr">
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Deepika Verma</td>
+                                <td class="y_td">deepika.verma@gmail.com</td>
+                                <td class="y_td">6398 1245 7852</td>
+                                <td class="y_td">+91 9517534682</td>
                                 <td class="y_td">Shift 01</td>
                                 <td class="y_td">
                                     <div class="status-indicator on-duty">
@@ -376,36 +331,17 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
-                                <td class="y_td">Shift 01</td>
-                                <td class="y_td">
-                                    <div class="status-indicator on-duty">
-                                        <span class="status-dot"></span>
-                                        On Duty
-                                    </div>
-                                </td>
-                                <td class="y_td">
-                                    <div class="action-buttons">
-                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Mohit Agarwal</td>
+                                <td class="y_td">mohit.agarwal@outlook.com</td>
+                                <td class="y_td">8523 1496 7532</td>
+                                <td class="y_td">+91 7845961230</td>
                                 <td class="y_td">Shift 03</td>
                                 <td class="y_td">
                                     <div class="status-indicator off-duty">
@@ -416,16 +352,38 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Ananya Mishra</td>
+                                <td class="y_td">ananya.mishra@gmail.com</td>
+                                <td class="y_td">7536 9514 2580</td>
+                                <td class="y_td">+91 8745219630</td>
+                                <td class="y_td">Shift 02</td>
+                                <td class="y_td">
+                                    <div class="status-indicator on-duty">
+                                        <span class="status-dot"></span>
+                                        On Duty
+                                    </div>
+                                </td>
+                                <td class="y_td">
+                                    <div class="action-buttons">
+                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="y_tr">
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Karan Malhotra</td>
+                                <td class="y_td">karan.malhotra@yahoo.com</td>
+                                <td class="y_td">9632 1475 8520</td>
+                                <td class="y_td">+91 9632147850</td>
                                 <td class="y_td">Shift 01</td>
                                 <td class="y_td">
                                     <div class="status-indicator on-duty">
@@ -436,16 +394,59 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="y_tr">
-                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img"/></td>
-                                <td class="y_td">Sunil Sharma</td>
-                                <td class="y_td">sunil021@gmail.com</td>
-                                <td class="y_td">5412 6523 58964</td>
-                                <td class="y_td">+91 898568569</td>
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Tanya Khanna</td>
+                                <td class="y_td">tanya.khanna@gmail.com</td>
+                                <td class="y_td">8520 1463 7952</td>
+                                <td class="y_td">+91 7530159624</td>
+                                <td class="y_td">Shift 03</td>
+                                <td class="y_td">
+                                    <div class="status-indicator off-duty">
+                                        <span class="status-dot"></span>
+                                        Off Duty
+                                    </div>
+                                </td>
+                                <td class="y_td">
+                                    <div class="action-buttons">
+                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="y_tr">
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Gaurav Joshi</td>
+                                <td class="y_td">gaurav.joshi@outlook.com</td>
+                                <td class="y_td">6547 8932 1054</td>
+                                <td class="y_td">+91 8415736920</td>
+                                <td class="y_td">Shift 02</td>
+                                <td class="y_td">
+                                    <div class="status-indicator on-duty">
+                                        <span class="status-dot"></span>
+                                        On Duty
+                                    </div>
+                                </td>
+                                <td class="y_td">
+                                    <div class="action-buttons">
+                                        <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="y_tr">
+                                <td class="y_td"><img src="img/icon/user.png" alt="employee-img" class="employee-img" /></td>
+                                <td class="y_td">Sneha Reddy</td>
+                                <td class="y_td">sneha.reddy@gmail.com</td>
+                                <td class="y_td">7896 5412 3698</td>
+                                <td class="y_td">+91 9638527410</td>
                                 <td class="y_td">Shift 01</td>
                                 <td class="y_td">
                                     <div class="status-indicator on-duty">
@@ -456,7 +457,8 @@
                                 <td class="y_td">
                                     <div class="action-buttons">
                                         <button class="edit-btn"><img src="img/icon/edit.png" alt=""></button>
-                                        <button class="delete-btn"><img src="img/icon/delete.png" alt=""></button>
+                                        <button class="delete-btn" data-bs-toggle="modal"
+                                        data-bs-target="#deleteEmpModal"><img src="img/icon/delete.png" alt=""></button>
                                     </div>
                                 </td>
                             </tr>
@@ -475,6 +477,28 @@
                 <button class="y_pagination-button">Next</button>
             </div>
         </section>
+         <!-- delete modal  -->
+         <div class="modal y_changePassModal fade" id="deleteEmpModal" tabindex="-1"
+         aria-labelledby="deleteEmpModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered">
+             <div class="modal-content py-4">
+                 <div class="modal-header py-0">
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+                 <div class="modal-body pt-0">
+                     <div class="y_modal_title d-grid justify-content-center">
+                         <h5 class="modal-title text-center pb-3" id="changePasswordModalLabel">Delete</h5>
+                         <p class="text-center text-muted">Are you sure you want to Delete? </p>
+                     </div>
+                 </div>
+                 <div class="modal-footer p-0 d-flex justify-content-center">
+                     <button type="button" class="y_btn_secodary mt-2 mb-3" data-bs-dismiss="modal"
+                     aria-label="Close">Cancel</button>
+                     <button type="button" class="y_btn_primary mt-2 mb-3">Yes</button>
+                 </div>
+             </div>
+         </div>
+     </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -488,6 +512,3 @@
 </body>
 
 </html>
-
-
-
