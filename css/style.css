@@ -1489,13 +1489,13 @@
     background-color: #f1f5fd;
     border: 1px solid #ccc;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px; 
   }
 
   .K_time-popup {
     position: absolute;
     top: 110%;
-    left: 0;
+    left: 0; 
     background: white;
     border: 1px solid #ccc;
     display: none; 
