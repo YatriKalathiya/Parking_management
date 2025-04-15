@@ -113,7 +113,7 @@
                     <button type="button" class="y_btn_primary mt-2 mb-3">Change Password</button>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
     <div class="modal y_changePassModal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel"
         aria-hidden="true">
@@ -176,62 +176,163 @@
                         <div class="col-lg-6 mt-4">
                             <input type="text" placeholder="Shift Name">
                         </div>
-                    <div>
-                    <div class="row">
-                        <div class="col-lg-6 mt-4">
-                            <div class="dropdown y_dropdwon">
-                                <button class="y_dropdwon_btn dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Start Time
-                                    <img src="img/icon/drp_dwn.png" alt="custom icon" class="y_custom_icon">
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Male</a>
-                                    <a class="dropdown-item" href="#">Female</a>
-                                    <a class="dropdown-item" href="#">Other</a>
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-6 mt-4">
+                                    <!-- Start Time Picker -->
+                                    <div class="y_time-picker-container">
+                                        <div class="y_time-input" id="startTimeInput">
+                                            <span class="y_time-input-text" id="startTimeText">Start Time</span>
+                                            <svg class="y_dropdown-icon" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </div>
+
+                                        <div class="y_time-dropdown" id="startTimeDropdown">
+                                            <div class="y_time-selector">
+                                                <div class="y_time-column">
+                                                    <div class="y_column-nav y_up" data-column="hour"
+                                                        data-picker="start">▲</div>
+                                                    <div class="y_time-scroll" id="startHourScroll">
+                                                        <div class="y_time-option" data-value="1">1</div>
+                                                        <div class="y_time-option" data-value="2">2</div>
+                                                        <div class="y_time-option selected" data-value="3">3</div>
+                                                        <div class="y_time-option" data-value="4">4</div>
+                                                        <div class="y_time-option" data-value="5">5</div>
+                                                        <div class="y_time-option" data-value="6">6</div>
+                                                        <div class="y_time-option" data-value="7">7</div>
+                                                        <div class="y_time-option" data-value="8">8</div>
+                                                        <div class="y_time-option" data-value="9">9</div>
+                                                        <div class="y_time-option" data-value="10">10</div>
+                                                        <div class="y_time-option" data-value="11">11</div>
+                                                        <div class="y_time-option" data-value="12">12</div>
+                                                    </div>
+                                                    <div class="y_column-nav y_down" data-column="hour"
+                                                        data-picker="start">▼</div>
+                                                </div>
+
+                                                <div class="y_separator">:</div>
+
+                                                <div class="y_time-column">
+                                                    <div class="y_column-nav y_up" data-column="minute"
+                                                        data-picker="start">▲</div>
+                                                    <div class="y_time-scroll" id="startMinuteScroll">
+                                                        <div class="y_time-option" data-value="00">00</div>
+                                                        <div class="y_time-option" data-value="05">05</div>
+                                                        <div class="y_time-option" data-value="10">10</div>
+                                                        <div class="y_time-option" data-value="15">15</div>
+                                                        <div class="y_time-option" data-value="20">20</div>
+                                                        <div class="y_time-option" data-value="25">25</div>
+                                                        <div class="y_time-option" data-value="30">30</div>
+                                                        <div class="y_time-option selected" data-value="31">31</div>
+                                                        <div class="y_time-option" data-value="32">32</div>
+                                                        <div class="y_time-option" data-value="35">35</div>
+                                                        <div class="y_time-option" data-value="40">40</div>
+                                                        <div class="y_time-option" data-value="45">45</div>
+                                                        <div class="y_time-option" data-value="50">50</div>
+                                                        <div class="y_time-option" data-value="55">55</div>
+                                                    </div>
+                                                    <div class="y_column-nav y_down" data-column="minute"
+                                                        data-picker="start">▼</div>
+                                                </div>
+
+                                                <div class="y_time-column">
+                                                    <div class="y_column-nav y_up" data-column="period"
+                                                        data-picker="start">▲</div>
+                                                    <div class="y_time-scroll" id="startPeriodScroll">
+                                                        <div class="y_time-option" data-value="AM">AM</div>
+                                                        <div class="y_time-option selected" data-value="PM">PM</div>
+                                                    </div>
+                                                    <div class="y_column-nav y_down" data-column="period"
+                                                        data-picker="start">▼</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="y_actions">
+                                                <button class="y_btn y_btn-cancel" id="startCancelBtn">Cancel</button>
+                                                <button class="y_btn y_btn-ok" id="startOkBtn">Ok</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 mt-4">
+                                    <!-- End Time Picker -->
+    <div class="y_time-picker-container">
+        <div class="y_time-input" id="endTimeInput">
+            <span class="y_time-input-text" id="endTimeText">End Time</span>
+            <svg class="y_dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+        
+        <div class="y_time-dropdown" id="endTimeDropdown">
+            <div class="y_time-selector">
+                <div class="y_time-column">
+                    <div class="y_column-nav y_up" data-column="hour" data-picker="end">▲</div>
+                    <div class="y_time-scroll" id="endHourScroll">
+                        <div class="y_time-option" data-value="1">1</div>
+                        <div class="y_time-option" data-value="2">2</div>
+                        <div class="y_time-option" data-value="3">3</div>
+                        <div class="y_time-option selected" data-value="4">4</div>
+                        <div class="y_time-option" data-value="5">5</div>
+                        <div class="y_time-option" data-value="6">6</div>
+                        <div class="y_time-option" data-value="7">7</div>
+                        <div class="y_time-option" data-value="8">8</div>
+                        <div class="y_time-option" data-value="9">9</div>
+                        <div class="y_time-option" data-value="10">10</div>
+                        <div class="y_time-option" data-value="11">11</div>
+                        <div class="y_time-option" data-value="12">12</div>
+                    </div>
+                    <div class="y_column-nav y_down" data-column="hour" data-picker="end">▼</div>
+                </div>
+                
+                <div class="y_separator">:</div>
+                
+                <div class="y_time-column">
+                    <div class="y_column-nav y_up" data-column="minute" data-picker="end">▲</div>
+                    <div class="y_time-scroll" id="endMinuteScroll">
+                        <div class="y_time-option" data-value="00">00</div>
+                        <div class="y_time-option" data-value="05">05</div>
+                        <div class="y_time-option" data-value="10">10</div>
+                        <div class="y_time-option" data-value="15">15</div>
+                        <div class="y_time-option" data-value="20">20</div>
+                        <div class="y_time-option" data-value="25">25</div>
+                        <div class="y_time-option" data-value="30">30</div>
+                        <div class="y_time-option" data-value="31">31</div>
+                        <div class="y_time-option selected" data-value="32">32</div>
+                        <div class="y_time-option" data-value="35">35</div>
+                        <div class="y_time-option" data-value="40">40</div>
+                        <div class="y_time-option" data-value="45">45</div>
+                        <div class="y_time-option" data-value="50">50</div>
+                        <div class="y_time-option" data-value="55">55</div>
+                    </div>
+                    <div class="y_column-nav y_down" data-column="minute" data-picker="end">▼</div>
+                </div>
+                
+                <div class="y_time-column">
+                    <div class="y_column-nav y_up" data-column="period" data-picker="end">▲</div>
+                    <div class="y_time-scroll" id="endPeriodScroll">
+                        <div class="y_time-option" data-value="AM">AM</div>
+                        <div class="y_time-option selected" data-value="PM">PM</div>
+                    </div>
+                    <div class="y_column-nav y_down" data-column="period" data-picker="end">▼</div>
+                </div>
+            </div>
+            
+            <div class="y_actions">
+                <button class="y_btn y_btn-cancel" id="endCancelBtn">Cancel</button>
+                <button class="y_btn y_btn-ok" id="endOkBtn">Ok</button>
+            </div>
+        </div>
+    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 mt-4">
-                            <div class="K_time-dropdown">
-                                <div class="K_time-display" onclick="toggleTimeDropdown()">Start Time</div>
-                                <div class="K_time-popup" id="K_timePopup">
-                                  <div class="d-flex">
-                                    <select id="K_hour">
-                                        <!-- 1 to 12 -->
-                                        <script>
-                                          for(let i = 1; i <= 12; i++) {
-                                            document.write(`<option value="${i}">${i}</option>`);
-                                          }
-                                        </script>
-                                      </select>
-                                      :
-                                      <select id="K_minute">
-                                        <!-- 00 to 59 -->
-                                        <script>
-                                          for(let i = 0; i < 60; i++) {
-                                            const val = i < 10 ? '0' + i : i;
-                                            document.write(`<option value="${val}">${val}</option>`);
-                                          }
-                                        </script>
-                                      </select>
-                                  
-                                      <select id="K_ampm">
-                                        <option value="AM">AM</option>
-                                        <option value="PM">PM</option>
-                                      </select>
-                                  </div>
-                                  <br>
-                                  <button onclick="setTime()">OK</button>
-                                  <button onclick="closeTimeDropdown()">Cancel</button>
-                                </div>
-                              </div>
-                              
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-cente my-4">
-                        <a href="#" class="y_btn_primary">Add Shift</a>
-                    </div>
+                            <div class="d-flex justify-content-center align-items-cente my-4">
+                                <a href="#" class="y_btn_primary">Add Shift</a>
+                            </div>
                 </form>
             </div>
         </section>
@@ -244,6 +345,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <script src="js/time.js"></script>
 
 </body>
 <script>

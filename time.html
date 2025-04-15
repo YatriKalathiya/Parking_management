@@ -1,149 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Time Picker</title>
-  <style>
-   .db_time_picker_wrapper {
-  position: relative;
-  width: 100%;
-  margin: 20px;
-}
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-.db_time_display {
-  background: #f5f9fc;
-  padding: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
+<div class="y_time-picker-container">
+  <label for="y_timeInput" class="form-label">Start Time</label>
+  <input type="text" id="y_timeInput" class="form-control y_time-input" placeholder="Start Time" readonly data-bs-toggle="modal" data-bs-target="#y_timeModal">
+</div>
 
-.db_time_picker {
-  display: none;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  padding: 20px;
-  border-radius: 15px;
-  display: flex;
-  gap: 20px;
-  z-index: 999;
-}
-
-.db_time_column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} 
-
-.db_time_option {
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 18px;
-  color: #666;
-}
-
-.db_time_option.selected {
-  font-weight: bold;
-  font-size: 20px;
-  color: #000;
-  border-bottom: 2px solid #000;
-}
-
-.db_time_buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: 20px;
-}
-
-.db_time_buttons button {
-  margin-top: 10px;
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-  </style>
-</head>
-<body>
-
-    <div class="db_time_picker_wrapper">
-        <div class="db_time_display" onclick="db_toggleTimePicker()">Start Time</div>
-        <div class="db_time_picker" id="db_time_picker">
-          <div class="db_time_column">
-            <div class="db_time_option" onclick="db_setHour(2)">2</div>
-            <div class="db_time_option selected" onclick="db_setHour(3)">3</div>
-            <div class="db_time_option" onclick="db_setHour(4)">4</div>
-          </div>
-          <div class="db_time_column">
-            <div class="db_time_option" onclick="db_setMinute(30)">30</div>
-            <div class="db_time_option selected" onclick="db_setMinute(31)">31</div>
-            <div class="db_time_option" onclick="db_setMinute(32)">32</div>
-          </div>
-          <div class="db_time_column">
-            <div class="db_time_option" onclick="db_setPeriod('AM')">AM</div>
-            <div class="db_time_option selected" onclick="db_setPeriod('PM')">PM</div>
-          </div>
-          <div class="db_time_buttons">
-            <button onclick="db_cancelTime()">Cancel</button>
-            <button onclick="db_confirmTime()">Ok</button>
-          </div>
+<!-- Modal -->
+<div class="modal fade" id="y_timeModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content y_time-modal-content">
+      <div class="modal-body text-center d-flex justify-content-center">
+        <div class="d-flex justify-content-between y_time-columns">
+          <select id="y_hour" class="form-select y_time-select">
+            <!-- Hours 1 to 12 -->
+            <script>
+              for (let i = 1; i <= 12; i++) {
+                document.write(`<option value="${i}">${i}</option>`);
+              }
+            </script>
+          </select>
+          <span class="mx-1 my-auto">:</span>
+          <select id="y_minute" class="form-select y_time-select">
+            <!-- Minutes 00 to 59 -->
+            <script>
+              for (let i = 0; i < 60; i++) {
+                let val = i.toString().padStart(2, "0");
+                document.write(`<option value="${val}">${val}</option>`);
+              }
+            </script>
+          </select>
+          <select id="y_ampm" class="form-select y_time-select">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
         </div>
       </div>
-      
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="y_setTime()">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- JavaScript -->
 <script>
-let db_selectedHour = 3;
-let db_selectedMinute = 31;
-let db_selectedPeriod = "PM";
-
-function db_toggleTimePicker() {
-  const picker = document.getElementById("db_time_picker");
-  picker.style.display = picker.style.display === "block" ? "none" : "block";
-}
-
-function db_setHour(hour) {
-  db_selectedHour = hour;
-  db_updateSelection("hour", hour);
-}
-
-function db_setMinute(minute) {
-  db_selectedMinute = minute;
-  db_updateSelection("minute", minute);
-}
-
-function db_setPeriod(period) {
-  db_selectedPeriod = period;
-  db_updateSelection("period", period);
-}
-
-function db_updateSelection(type, value) {
-  let column;
-  if (type === "hour") column = document.querySelectorAll(".db_time_column")[0];
-  if (type === "minute") column = document.querySelectorAll(".db_time_column")[1];
-  if (type === "period") column = document.querySelectorAll(".db_time_column")[2];
-
-  column.querySelectorAll(".db_time_option").forEach(opt => {
-    opt.classList.remove("selected");
-    if (opt.textContent == value) opt.classList.add("selected");
-  });
-}
-
-function db_cancelTime() {
-  document.getElementById("db_time_picker").style.display = "none";
-}
-
-function db_confirmTime() {
-  const display = document.querySelector(".db_time_display");
-  display.textContent = `Start Time: ${db_selectedHour}:${db_selectedMinute} ${db_selectedPeriod}`;
-  document.getElementById("db_time_picker").style.display = "none";
-}
-
+  function y_setTime() {
+    const hour = document.getElementById("y_hour").value;
+    const minute = document.getElementById("y_minute").value;
+    const ampm = document.getElementById("y_ampm").value;
+    document.getElementById("y_timeInput").value = `${hour}:${minute} ${ampm}`;
+    const modal = bootstrap.Modal.getInstance(document.getElementById("y_timeModal"));
+    modal.hide();
+  }
 </script>
 
-</body>
-</html>
+<style>
+  .y_time-select {
+    width: 80px;
+    height: 150px;
+    font-size: 24px;
+    text-align: center;
+    overflow-y: scroll;
+  }
+
+  .y_time-columns select {
+    margin: 0 5px;
+  }
+
+  .y_time-modal-content {
+    padding: 15px;
+  }
+
+  .y_time-input {
+    background-color: #f1f5f9;
+    cursor: pointer;
+  }
+</style>
