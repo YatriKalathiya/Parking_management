@@ -6,7 +6,7 @@ const y_nextBtn = document.getElementById('y_next_month');
 let y_date = new Date();
 
 function renderCalendar() {
-  const year = y_date.getFullYear();
+  const year = y_date.getFullYear(); 
   const month = y_date.getMonth();
 
   const firstDayOfMonth = new Date(year, month, 1);

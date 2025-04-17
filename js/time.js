@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     createTimePicker('start', '3', '31', 'PM');
     createTimePicker('end', '4', '32', 'PM');
     
-    // Close dropdowns when clicking outside
+    // Close dropdowns when clicking outside 
     document.addEventListener('click', function(event) {
         const startTimeInput = document.getElementById('startTimeInput');
         const startTimeDropdown = document.getElementById('startTimeDropdown');
