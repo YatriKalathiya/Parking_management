@@ -30,7 +30,18 @@ function showConfirmPassword() {
 function moveToNext(input, event) {
     if (input.value.length === 1) {
         let next = input.nextElementSibling;
-        if (next) next.focus();
+        if (next && next.classList.contains('otp-input')) {
+            next.focus();
+        }
+    }
+}
+
+function moveToPrev(input, event) {
+    if (event.key === "Backspace" && input.value === "") {
+        let prev = input.previousElementSibling;
+        if (prev && prev.classList.contains('otp-input')) {
+            prev.focus();
+        }
     }
 }
 

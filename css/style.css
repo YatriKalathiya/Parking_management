@@ -15,6 +15,7 @@
 }
 
 .y_login-box {
+    margin: auto;
     background: #ffffff;
     padding: 58px 81px;
     border-radius: 4px;
@@ -66,7 +67,7 @@
     text-align: start;
     color: #000000;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 5px;
 }
 
@@ -76,7 +77,6 @@
     border: 1px solid #EEEEEE;
     background-color: #F1F5F9;
 }
-
 .y_changePass-box form label {
     text-align: start;
     color: #000000;
@@ -332,8 +332,8 @@
 }
 
 .y_icon img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 .y_number {
@@ -406,6 +406,7 @@
 
 .navbar-light .navbar-toggler-icon {
     background-image: url(/img/icon/menu.png) !important;
+    display: none;
 }
 
 /* / drawer start / */
@@ -479,6 +480,7 @@
     /* width: 100%; */
     border-radius: 4px;
     background: #F1F5F9;
+    color: #000000;
     outline: none;
     padding: 10px 10px 10px 35px;
     background-size: 20px;
@@ -527,7 +529,7 @@
 
 #y_main-content {
     background-color: #F1F5F9;
-    height: 100vh;
+    height: 100%;
     margin-left: 282px;
     margin-top: 100px;
 }
@@ -2126,9 +2128,12 @@
     }
 
     .y_navbar .navbar-toggler {
-        display: block;
+        display: block !important;
     }
-
+    .navbar-light .navbar-toggler-icon {
+        background-image: url(/img/icon/menu.png) !important;
+        display: block !important;
+    }
     .y_search {
         margin-left: 5px !important;
     }

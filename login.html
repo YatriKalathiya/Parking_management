@@ -54,14 +54,10 @@
                     <p class="y_loginSubHeading text-center">OTP has been sent to abc@gmail.com</p>
                     <form>
                         <div class="y_otp-inputs">
-                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
-                                required>
-                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
-                                required>
-                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
-                                required>
-                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)"
-                                required>
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)" onkeydown="moveToPrev(this, event)" required>
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)" onkeydown="moveToPrev(this, event)" required>
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)" onkeydown="moveToPrev(this, event)" required>
+                            <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, event)" onkeydown="moveToPrev(this, event)" required>
                         </div>
                         <button type="submit" class="y_login-btn" onclick="showConfirmPassword()">Verify</button>
 
