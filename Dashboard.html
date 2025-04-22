@@ -71,7 +71,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
-  </nav>
+  </nav> 
   <div class="modal y_changePassModal fade" id="changePasswordModal" tabindex="-1"
     aria-labelledby="changePasswordModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -79,29 +79,33 @@
         <div class="modal-header pb-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body pt-0">
-          <div class="y_modal_title d-flex justify-content-center">
-            <h5 class="modal-title text-center text-light pb-3" id="changePasswordModalLabel">Change
-              Password</h5>
-          </div>
-          <div class="toggle-container">
-            <input type="password" id="old-password" class="form-control my-3 pswd" placeholder="Enter Old Password"
-              required>
-            <i class="toggle-password2 fa fa-eye fa-eye-slash" data-target="#old-password"></i>
-          </div>
-          <div class="toggle-container">
-            <input type="password" id="new-password" class="form-control my-3 pswd" placeholder="Create New Password"
-              required>
-            <i class="toggle-password2 fa fa-eye fa-eye-slash" data-target="#new-password"></i>
-          </div>
-          <div class="toggle-container">
-            <input type="password" id="confirm-password" class="form-control my-3 pswd"
-              placeholder="Confirm New Password" required>
-            <i class="toggle-password2 fa fa-eye fa-eye-slash" data-target="#confirm-password"></i>
-          </div>
+        <div class="modal-body y_changePass-box pt-0">
+          <form action="#">
+            <div class="y_modal_title d-flex justify-content-center">
+              <h5 class="modal-title text-center pb-3" id="changePasswordModalLabel">Change
+                Password</h5>
+            </div>
+            <label for="new-password" class="mb-1">Old Password*</label>
+            <div class="y_password-field">
+              <input type="password" id="new-password" class="form-control">
+              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+            </div>
+            <label for="new-password" class="mb-1">New Password*</label>
+            <div class="y_password-field">
+              <input type="password" id="new-password" class="form-control">
+              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+            </div>
+            <label for="new-password" class="mb-1">Confirm New Password*</label>
+            <div class="y_password-field">
+              <input type="password" id="new-password" class="form-control mb-0">
+              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+            </div>
+            <label for="new-password" class="mb-1">Both password must match</label>
+
+          </form>
         </div>
         <div class="modal-footer p-0 d-flex justify-content-center">
-          <button type="button" class="y_btn_primary">Change Password</button>
+          <button type="button" class="y_btn_primary mt-2 mb-3">Change Password</button>
         </div>
       </div>
     </div>
@@ -114,14 +118,14 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body pt-0">
-          <div class="y_modal_title d-flex justify-content-center">
-            <h5 class="modal-title text-center text-light pb-3" id="changePasswordModalLabel">Are you sure
-              you want to Logout ?</h5>
+          <div class="y_modal_title d-grid justify-content-center">
+            <h5 class="modal-title text-center pb-3" id="changePasswordModalLabel">Logout</h5>
+            <p class="text-center text-muted">Are you sure to logout? </p>
           </div>
         </div>
         <div class="modal-footer p-0 d-flex justify-content-center">
-          <button type="button" class="y_btn_secodary" id="cancelLogout">No</button>
-          <button type="button" class="y_btn_primary" id="user-logout" onclick="logout()">Yes</button>
+          <button type="button" class="y_btn_secodary mt-2 mb-3" id="cancelLogout">Cancel</button>
+          <button type="button" class="y_btn_primary mt-2 mb-3" id="user-logout" onclick="logout()">Yes</button>
         </div>
       </div>
     </div>

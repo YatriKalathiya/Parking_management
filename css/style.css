@@ -405,7 +405,7 @@
 }
 
 .navbar-light .navbar-toggler-icon {
-    background-image: url(img/icon/menu.png) !important;
+    background-image: url(/img/icon/menu.png) !important;
 }
 
 /* / drawer start / */
