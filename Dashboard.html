@@ -21,7 +21,7 @@
         <span class="search-icon">
           <img src="img/icon/search.png" alt="Search">
         </span>
-        <input type="text" placeholder="Search vehicle no. " class="custom-search-input">
+        <input type="text" placeholder="Search vehicle no." class="custom-search-input">
       </div>
     </div>
     <div class="d-flex align-items-center justify-content-between">
@@ -91,14 +91,16 @@
               <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
             </div>
             <label for="new-password" class="mb-1">New Password*</label>
+            
             <div class="y_password-field">
-              <input type="password" id="new-password" class="form-control">
-              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+              <input type="password" id="confirm-password" class="form-control">
+              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('confirm-password', this)">
             </div>
-            <label for="new-password" class="mb-1">Confirm New Password*</label>
+            <label for="confirm-password" class="mb-1">Confirm New Password*</label>
+            
             <div class="y_password-field">
-              <input type="password" id="new-password" class="form-control mb-0">
-              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+              <input type="password" id="repeat-password" class="form-control mb-0">
+              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('repeat-password', this)">
             </div>
             <label for="new-password" class="mb-1">Both password must match</label>
 
@@ -124,12 +126,13 @@
           </div>
         </div>
         <div class="modal-footer p-0 d-flex justify-content-center">
-          <button type="button" class="y_btn_secodary mt-2 mb-3" id="cancelLogout">Cancel</button>
-          <button type="button" class="y_btn_primary mt-2 mb-3" id="user-logout" onclick="logout()">Yes</button>
+          <button type="button" class="y_btn_secodary width_set mt-2 mb-3" id="cancelLogout">Cancel</button>
+          <button type="button" class="y_btn_primary width_set mt-2 mb-3" id="user-logout" onclick="logout()">Yes</button>
         </div>
       </div>
     </div>
   </div>
+  <div id="y_backdrop" class="y_backdrop"></div>
   <div class="y_drawer" id="y_drawer">
     <div class="list-group list-group-flush">
       <div class="y_logo">
@@ -240,7 +243,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 mt-4">
+        <div class="col-xl-4 col-lg-6 mt-4">
           <div class="container y_container d-grid justify-content-center">
             <p class="y_card1Header">Booking</p>
             <div class="y_number">250</div>
@@ -249,7 +252,7 @@
               yesterday</p>
           </div>
         </div>
-        <div class="col-lg-4 mt-4">
+        <div class="col-xl-4 col-lg-6 mt-4">
           <div class="container y_container">
             <p class="y_card2Header">Parking</p>
             <div class="row g-3">
@@ -264,13 +267,13 @@
                 <div class="y_card">
                   <p class="y_card2Header fw-bold">Long Time</p>
                   <div class="y_number">55</div>
-                  <p class="y_mutedSmall">Booked Today</p>
+                  <p class="y_mutedSmall">Booked Today</p>  
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mt-4">
+        <div class="col-xl-4 col-lg-6 mt-4">
           <div class="container y_container">
             <p class="y_card1Header">Current Revenue </p>
             <img src="img/icon/ruppeBig.png" alt="">

@@ -10,13 +10,13 @@ function showLogin() {
 function togglePassword(fieldId, icon) {
     let inputField = document.getElementById(fieldId);
     if (inputField.type === "password") {
-        inputField.type = "text";
-        icon.src = "img/icon/eye-close.png";
+      inputField.type = "text";
+      icon.src = "img/icon/eye-close.png";
     } else {
-        inputField.type = "password";
-        icon.src = "img/icon/eye.png";
+      inputField.type = "password";
+      icon.src = "img/icon/eye.png";
     }
-}
+  }
 function showOtpForm() {
     document.getElementById("forgotPasswordForm").style.display = "none";
     document.getElementById("otpForm").style.display = "block";
@@ -51,9 +51,21 @@ function moveToPrev(input, event) {
 // }
 function toggleDrawer() {
     const drawer = document.getElementById('y_drawer');
+    const backdrop = document.getElementById('y_backdrop');
+  
     drawer.classList.toggle('open');
+  
+    if (drawer.classList.contains('open')) {
+      backdrop.style.display = 'block';
+    } else {
+      backdrop.style.display = 'none';
+    }
   }
-
+  
+  document.getElementById('y_backdrop').addEventListener('click', function() {
+    document.getElementById('y_drawer').classList.remove('open');
+    this.style.display = 'none';
+  });
   document.addEventListener("DOMContentLoaded", function () {
     const legendData = [
         { color: "#172037", label: "level 1" },

@@ -237,7 +237,7 @@
 }
 
 .y_search_container {
-    cursor: pointer;
+    /* cursor: pointer; */
     position: relative;
     width: 100%;
     /* max-width: 300px; */
@@ -1676,6 +1676,19 @@
     font-weight: bold;
     border-radius: 5px;
   }
+  .y_backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+  }
+  .width_set{
+    width: 150px;
+  }
 @media (max-width: 1440px) {
     .y_box_ride {
         gap: 10px !important;
@@ -1697,7 +1710,7 @@
     }
 
     .y_containerMain {
-        padding: 5px 25px;
+        padding: 17px 25px;
     }
 
     #y_main-content {
@@ -1883,6 +1896,13 @@
 }
 
 @media (max-width: 1024px) {
+    .leval_conrainer {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .w-lg-auto{
+        width: auto !important;
+    }
     .y_pt-5 {
         padding-top: 20px !important;
     }
@@ -2008,6 +2028,15 @@
 }
 
 @media (max-width: 768px) {
+    .entryRight , .entryLeft ,.ExitRight , .ExitLeft {
+        font-size: 12px;
+    }
+    .grid-cell {
+        font-size: 12px;
+    }
+    .width_set{
+        width: 100px;
+      }
     .grid-column {
         flex-basis: 100%;
         border-right: none;
@@ -2053,7 +2082,7 @@
     }
 
     .button_container {
-        padding: 5px 2px 6px 2px;
+        padding: 1px 2px 6px 2px;
     }
 
     .y_container,
@@ -2090,9 +2119,15 @@
     }
 
     .y_cardLine {
-        flex: 1 1 100%;
+        flex: 1;
     }
-
+    .y_icon img {
+        width: 35px;
+        height: 35px;
+    }
+    .y_icon {
+        margin-bottom: 12px;
+    }
     .y_revenu_chart-container {
         padding: 15px;
     }
@@ -2251,7 +2286,7 @@
     }
 
     .y_number {
-        font-size: 22px;
+        font-size: 15px;
     }
 
     .button_container a {
@@ -2260,7 +2295,7 @@
     }
 
     .y_card p {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .y_chart_header h2 {
@@ -2328,6 +2363,11 @@
 }
 
 @media (max-width: 425px) {
+    .y_drawer .list-group a {
+        border: none;
+        padding: 12px 0 18px 20px;
+        font-size: 16px;
+    }
     .y_number {
         font-size: 20px;
     }
@@ -2439,11 +2479,11 @@
 
 @media (max-width: 375px) {
     .y_search input {
-        width: 100px !important;
+        width: 150px !important;
     }
 
     .y_containerMain {
-        padding: 0px 10px;
+        padding: 1px 10px;
     }
 }
 
@@ -2454,9 +2494,12 @@
 
     .button_container a {
         font-size: 9px;
-        padding: 2px 6px;
+        padding: 1px 1px;
+        border-radius: 4px;
     }
-
+    .button_container {
+        padding: 1px 3px 3px 1px;
+    }
     .y_card p {
         font-size: 9px;
     }
