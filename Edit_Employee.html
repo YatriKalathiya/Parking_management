@@ -171,7 +171,7 @@
                             <input type="text" value="Sunil Sharma">
                         </div>
                         <div class="col-lg-6 mt-4">
-                            <input type="text" value="sunil021@gmail.com">
+                            <input type="text" mailto:value="sunil021@gmail.com">
                         </div>
                         <div class="col-lg-6 mt-4">
                             <input type="text" value="5412 6523 58964">
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 mt-4">
-                            <div class="dropdown y_dropdwon">
+                            <!-- <div class="dropdown y_dropdwon">
                                 <button class="y_dropdwon_btn y_text-dark dropdown-toggle" type="button"
                                     id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
@@ -201,9 +201,22 @@
                                     <a class="dropdown-item" href="#">Female</a>
                                     <a class="dropdown-item" href="#">Other</a>
                                 </div>
+                            </div> -->
+                            <div class="dropdown y_dropdwon">
+                              <button class="y_dropdwon_btn y_text-dark dropdown-toggle d-flex align-items-center justify-content-between w-100"
+                                type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <span id="selectedGender">Gender</span>
+                                <img src="img/icon/drp_down_black.png" alt="custom icon" class="y_custom_icon" />
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item gender-option" href="#">Male</a>
+                                <a class="dropdown-item gender-option" href="#">Female</a>
+                                <a class="dropdown-item gender-option" href="#">Other</a>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 mt-4">
+                        <!-- <div class="col-lg-6 mt-4">
                             <div class="dropdown y_dropdown">
                                 <button class="y_dropdwon_btn y_text-dark dropdown-toggle" type="button"
                                     id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -226,7 +239,31 @@
                                     </label>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="col-lg-6 mt-4">
+                          <div class="dropdown y_dropdown">
+                            <button class="y_dropdwon_btn y_text-dark dropdown-toggle d-flex justify-content-between align-items-center w-100"
+                              type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span id="db_selectedShift">Select Shift</span>
+                              <img src="img/icon/drp_down_black.png" alt="icon" class="y_custom_icon">
+                            </button>
+                            <div class="dropdown-menu y_custom_dropdown" aria-labelledby="dropdownMenuButton">
+                              <label class="y_dropdown_item">
+                                <input type="radio" name="shift" value="Shift 01" checked>
+                                <span>Shift 01</span>
+                              </label>
+                              <label class="y_dropdown_item">
+                                <input type="radio" name="shift" value="Shift 02">
+                                <span>Shift 02</span>
+                              </label>
+                              <label class="y_dropdown_item">
+                                <input type="radio" name="shift" value="Shift 03">
+                                <span>Shift 03</span>
+                              </label>
+                            </div>
+                          </div>
                         </div>
+                        
                         <div class="col-lg-6 mt-4">
                             <input type="text" value="6:00AM to 02:00PM ">
                         </div>
@@ -260,6 +297,31 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <script>
+      // Gender dropdown value update script
+      document.querySelectorAll(".gender-option").forEach(function (option) {
+        option.addEventListener("click", function (e) {
+          e.preventDefault();
+          const selectedText = this.textContent;
+          document.getElementById("selectedGender").textContent = selectedText;
+        });
+      });
+
+      const shiftRadios = document.querySelectorAll('input[name="shift"]');
+  const shiftDisplay = document.getElementById('db_selectedShift');
+
+  // Set default on page load
+  const checkedShift = document.querySelector('input[name="shift"]:checked');
+  if (checkedShift) {
+    shiftDisplay.textContent = checkedShift.value;
+  }
+
+  shiftRadios.forEach(radio => {
+    radio.addEventListener('change', function () {
+      shiftDisplay.textContent = this.value;
+    });
+  });
+    </script>
 
 </body>
 <script>

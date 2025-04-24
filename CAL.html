@@ -45,21 +45,28 @@
       display: inline-block;
     }
 
-    .y_calendar_dates span:hover {
-      background-color: #f0f0f0;
-    }
-
-    .y_prev_date,
-    .y_next_date {
-      color: #ccc;
-    }
-
     .y_active_date {
       background-color: black;
       color: white;
       font-weight: bold;
       border-radius: 5px;
     }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+.y_time-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.y_time-option {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+}
+
   </style>
 </head>
 

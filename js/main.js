@@ -60,12 +60,13 @@ function toggleDrawer() {
     } else {
       backdrop.style.display = 'none';
     }
-  }
-  
+      
   document.getElementById('y_backdrop').addEventListener('click', function() {
     document.getElementById('y_drawer').classList.remove('open');
     this.style.display = 'none';
   });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const legendData = [
         { color: "#172037", label: "level 1" },
