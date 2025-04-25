@@ -21,7 +21,7 @@
         <span class="search-icon">
           <img src="img/icon/search.png" alt="Search">
         </span>
-        <input type="text" placeholder="Search vehicle no. " class="custom-search-input">
+        <input type="text" placeholder="Search vehicle no." class="custom-search-input">
       </div>
     </div>
     <div class="d-flex align-items-center justify-content-between">
@@ -91,14 +91,16 @@
               <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
             </div>
             <label for="new-password" class="mb-1">New Password*</label>
+            
             <div class="y_password-field">
-              <input type="password" id="new-password" class="form-control">
-              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+              <input type="password" id="confirm-password" class="form-control">
+              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('confirm-password', this)">
             </div>
-            <label for="new-password" class="mb-1">Confirm New Password*</label>
+            <label for="confirm-password" class="mb-1">Confirm New Password*</label>
+            
             <div class="y_password-field">
-              <input type="password" id="new-password" class="form-control mb-0">
-              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('new-password', this)">
+              <input type="password" id="repeat-password" class="form-control mb-0">
+              <img src="/img/icon/eye.png" class="y_eye-icon" onclick="togglePassword('repeat-password', this)">
             </div>
             <label for="new-password" class="mb-1">Both password must match</label>
 
@@ -124,38 +126,39 @@
           </div>
         </div>
         <div class="modal-footer p-0 d-flex justify-content-center">
-          <button type="button" class="y_btn_secodary mt-2 mb-3" id="cancelLogout">Cancel</button>
-          <button type="button" class="y_btn_primary mt-2 mb-3" id="user-logout" onclick="logout()">Yes</button>
+          <button type="button" class="y_btn_secodary width_set mt-2 mb-3" id="cancelLogout">Cancel</button>
+          <button type="button" class="y_btn_primary width_set mt-2 mb-3" id="user-logout" onclick="logout()">Yes</button>
         </div>
       </div>
     </div>
   </div>
+  <div id="y_backdrop" class="y_backdrop"></div>
   <div class="y_drawer" id="y_drawer">
     <div class="list-group list-group-flush">
       <div class="y_logo">
         <h2>LOGO</h2>
       </div>
-      <a href="#" class="list-group-item y_activenav list-group-item-action d-flex align-items-cente">
+      <a href="Dashboard.html" class="list-group-item y_activenav list-group-item-action d-flex align-items-cente">
         <img src="img/icon/home.png" class="me-3" style="vertical-align: top;">
         Dashboard
       </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+      <a href="Revenue_data.html" class="list-group-item list-group-item-action d-flex align-items-center">
         <img src="img/icon/rupee.png" class="me-3" style="vertical-align: top;">
         Revenue Data
       </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+      <a href="Parking_Overview.html" class="list-group-item list-group-item-action d-flex align-items-center">
         <img src="img/icon/p.png" class="me-3" style="vertical-align: top;">
         Parking Overview
       </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+      <a href="Report.html" class="list-group-item list-group-item-action d-flex align-items-center">
         <img src="img/icon/report.png" class="me-3" style="vertical-align: top;">
         Report
       </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+      <a href="Employee.html" class="list-group-item list-group-item-action d-flex align-items-center">
         <img src="img/icon/emp.png" class="me-3" style="vertical-align: top;">
         Employee
       </a>
-      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+      <a href="Shift_Time.html" class="list-group-item list-group-item-action d-flex align-items-center">
         <img src="img/icon/siftTime.png" class="me-3" style="vertical-align: top;">
         Shift Time
       </a>
