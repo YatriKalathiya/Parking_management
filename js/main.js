@@ -116,6 +116,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+// buutons active 
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".button_container2 a");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // Link ko reload hone se rokne ke liye
+            
+            // Pehle sabse active class hatao
+            buttons.forEach(btn => btn.classList.remove("active"));
+            
+            // Ab jispe click kiya hai uspe active class add karo
+            this.classList.add("active");
+        });
+    });
+});
 
 
 // donut chart 

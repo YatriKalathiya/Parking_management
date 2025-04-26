@@ -130,10 +130,17 @@ function createTimePicker(prefix, defaultHour, defaultMinute, defaultPeriod) {
         // Remove all selected classes
         timeOptions.forEach(opt => opt.classList.remove('selected'));
         
-        // Add selected class to current selections
-        hourScroll.querySelector(`.y_time-option[data-value="${selectedHour}"]`).classList.add('selected');
-        minuteScroll.querySelector(`.y_time-option[data-value="${selectedMinute}"]`).classList.add('selected');
-        periodScroll.querySelector(`.y_time-option[data-value="${selectedPeriod}"]`).classList.add('selected');
+        const selectedHourElement = hourScroll.querySelector(`.y_time-option[data-value="${selectedHour}"]`);
+        const selectedMinuteElement = minuteScroll.querySelector(`.y_time-option[data-value="${selectedMinute}"]`);
+        const selectedPeriodElement = periodScroll.querySelector(`.y_time-option[data-value="${selectedPeriod}"]`);
+        selectedHourElement.classList.add('selected');
+        selectedMinuteElement.classList.add('selected');
+        selectedPeriodElement.classList.add('selected');
+        
+        // Scroll to selected options
+        selectedHourElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        selectedMinuteElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        selectedPeriodElement.scrollIntoView({ behavior: 'smooth', block: 'center' });    
     }
     
     function scrollToSelected() {
@@ -141,7 +148,7 @@ function createTimePicker(prefix, defaultHour, defaultMinute, defaultPeriod) {
         hourScroll.querySelector('.y_time-option.selected').scrollIntoView({ block: 'center' });
         minuteScroll.querySelector('.y_time-option.selected').scrollIntoView({ block: 'center' });
         periodScroll.querySelector('.y_time-option.selected').scrollIntoView({ block: 'center' });
-    }
+    }   
     
     // Handle Cancel button
     cancelBtn.addEventListener('click', function() {

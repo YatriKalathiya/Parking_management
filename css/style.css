@@ -728,6 +728,28 @@
     color: #000000;
 }
 
+
+
+.button_container2 {
+    padding: 9px 6px;
+    background-color: #000000;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.button_container2 a {
+    text-decoration: none;
+    padding: 6px 23px;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+}
+
+.button_container2 a.active {
+    background-color: #F1F5F9;
+    color: #000000;
+}
+
 /* donut chart  */
 .donut_chart_container {
     display: grid;
@@ -1602,7 +1624,7 @@
     font-size: 24px;
     font-weight: bold;
     color: #666;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 .y_actions {
@@ -1792,6 +1814,14 @@
     }
 
     .button_container {
+        padding: 6px 3px 8px 3px;
+    }
+    .button_container2 a {
+        font-size: 13px;
+        padding: 6px 17px;
+    }
+
+    .button_container2 {
         padding: 6px 3px 8px 3px;
     }
 
@@ -2118,6 +2148,14 @@
     .button_container {
         padding: 1px 2px 6px 2px;
     }
+    .button_container2 a {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
+    .button_container2 {
+        padding: 1px 2px 6px 2px;
+    }
 
     .y_container,
     .y_container1,
@@ -2345,6 +2383,10 @@
         font-size: 11px;
         padding: 4px 10px;
     }
+    .button_container2 a {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
 
     .y_card p {
         font-size: 10px;
@@ -2452,6 +2494,22 @@
         background-color: #000000;
         color: #ffffff;
     }
+
+    .button_container2 a {
+        font-size: 11px;
+        padding: 1px 6px;
+        border-radius: 4px;
+        color: black;
+    }
+    .button_container2 {
+        padding: 1px 3px 3px 1px;
+        background-color: transparent;
+
+    }
+    .button_container2 a.active {
+        background-color: #000000;
+        color: #ffffff;
+    }
     .y_card p {
         font-size: 10px;
     }
@@ -2508,6 +2566,9 @@
 
 @media (max-width: 400px) {
     .button_container {
+        padding: 0px 2px 5px 6px;
+    }
+    .button_container2 {
         padding: 0px 2px 5px 6px;
     }
 
