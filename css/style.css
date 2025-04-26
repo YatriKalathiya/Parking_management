@@ -1573,6 +1573,7 @@
 }
 
 .y_time-option.selected {
+    /* position: fixed; */
     color: #000;
     font-weight: bold;
     border-bottom: 2px solid #000;
@@ -2040,7 +2041,21 @@
 }
 
 @media (max-width: 768px) {
-
+    .ride-new-box img {
+        height: 60px;
+        width: 60px;
+        margin-right: 7px;
+    }
+    .y_box_ride {
+        gap: 41px !important;
+    }
+    .ride-new-number {
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .ride-new-duration {
+        font-size: 14px;
+    }
     .entryRight,
     .entryLeft,
     .ExitRight,
@@ -2279,6 +2294,19 @@
 }
 
 @media (max-width: 576px) {
+    .y_box_ride {
+        gap: 28px !important;
+    }
+    .ride-new-box img {
+        height: 30px;
+        width: 30px;
+    }
+    .ride-new-number {
+        font-size: 10px;
+    }
+    .ride-new-duration {
+        font-size: 10px;
+    }
     .res_flex {
         display: block !important;
     }
@@ -2384,9 +2412,21 @@
     .y_chartBox {
         display: block !important;
     }
+    .y_time-dropdown{
+        padding: 14px;
+    }
+    .y_time-option{
+        font-size: 13px;
+    }
+    .y_time-dropdown{
+        width: 250px;
+    }
 }
 
 @media (max-width: 425px) {
+    .y_box_ride {
+        gap: 10px !important;
+    }
     .y_drawer .list-group a {
         border: none;
         padding: 12px 0 18px 20px;
@@ -2398,10 +2438,20 @@
     }
 
     .button_container a {
-        font-size: 10px;
-        padding: 3px 8px;
+        font-size: 11px;
+        padding: 1px 6px;
+        border-radius: 4px;
+        color: black;
     }
+    .button_container {
+        padding: 1px 3px 3px 1px;
+        background-color: transparent;
 
+    }
+    .button_container a.active {
+        background-color: #000000;
+        color: #ffffff;
+    }
     .y_card p {
         font-size: 10px;
     }
@@ -2516,17 +2566,7 @@
     .y_number {
         font-size: 18px;
     }
-
-    .button_container a {
-        font-size: 9px;
-        padding: 1px 1px;
-        border-radius: 4px;
-    }
-
-    .button_container {
-        padding: 1px 3px 3px 1px;
-    }
-
+   
     .y_card p {
         font-size: 9px;
     }
